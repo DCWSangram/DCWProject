@@ -1,0 +1,36 @@
+{% extends 'dcwapp/base.html' %}
+
+{% block title %}
+    Vehicle Infomrations
+{% endblock %}
+
+
+{% block body %}
+    <h1>vgbjkk,k</h1>
+    
+    {% if vehicle %}
+    <table border="2">
+        <thead>
+            <th>Vehicle Brand</th>
+            <th>Vehicle Model</th>
+            <th>Vehicle Category</th>
+            <th>Vehicle Number</th>
+            <th>Vehicle Colour</th>
+        </thead>
+        {% for i in vehicle %}
+            <tr>
+                <td>{{i.vehicle_brand}}</td>
+                <td>{{i.vehicle_model}}</td>
+                <td>{{i.vehicle_category}}</td>
+                <td>{{i.vehicle_number}}</td>
+                <td>{{i.vehicle_color}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>You did not start your vehilce service. Please add your vehicle info and enjoy our services</p>
+
+    {% endif %}
+       
+{% endblock  %}
+    

@@ -1,0 +1,52 @@
+{% extends 'dcwapp/base.html' %}
+{% block title %}{%endblock%}
+
+{% block body %}
+    <h1>Update Your Address</h1>
+    <form action="" method="POST">
+        {%csrf_token%}
+        
+        {% if userdata.custuser.cinfo.appt_name %}
+            <label for="">Appartment Name: </label> <input type="text" name="apptname" value="{{userdata.custuser.cinfo.appt_name}}" id=""><br><br>
+        {% endif %}
+
+        {% if userdata.custuser.cinfo.area %}
+        <label for="">Area: </label> <input type="text" name="area" value="{{userdata.custuser.cinfo.area}}" id=""><br><br>
+        {% endif %} 
+
+        {% if userdata.custuser.cinfo.block_name %}
+        <label for="">Block Number/Tower Number: </label> <input type="text" name="blockname" value="{{userdata.custuser.cinfo.block_name}}" id=""> <br><br>
+        {% endif %} 
+
+        {% if userdata.custuser.cinfo.House_no %}
+        <label for="">House Number: </label> <input type="text" name="houseno" value="{{userdata.custuser.cinfo.House_no}}" id=""><br><br>
+        {% endif %} 
+        {% if userdata.custuser.cinfo.lane_number %}
+        <label for="">Lane Number: </label> <input type="text" name="laneno" value="{{userdata.custuser.cinfo.lane_number}}" id=""> <br><br>
+        {% endif %}   
+
+        {% if userdata.custuser.cinfo.adress_line1 %}
+        <label for="">Address Line 1: </label> <input type="text" name="address1" value="{{userdata.custuser.cinfo.adress_line1}}" id=""><br><br>
+        {% endif %}  
+
+        {% if userdata.custuser.cinfo.address_line2 %}
+        <label for="">Address Line 2: </label> <input type="text" name="address2" value="{{userdata.custuser.cinfo.address_line2}}" id=""><br><br>
+        {% endif %}  
+
+        {% if userdata.custuser.cinfo.city %}
+        <label for="">City: </label> <input type="text" name="city" value="{{userdata.custuser.cinfo.city}}" id=""><br><br>
+        {% endif %} 
+
+        {% if userdata.custuser.cinfo.zipcode %}
+        <label for="">PIN: </label> <input type="text" name="zipcode" value="{{userdata.custuser.cinfo.zipcode}}" id=""><br><br>
+        {% endif %} 
+        
+        {% if userdata.custuser.cinfo.state %}
+        <label for="">State: </label> <input type="text" name="state" value="{{userdata.custuser.cinfo.state}}" id=""><br><br>
+        {% endif %}
+        
+        <input type="submit" value="Update">
+
+    </form>
+{% endblock%}
+    

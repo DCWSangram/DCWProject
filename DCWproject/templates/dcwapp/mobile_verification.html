@@ -1,0 +1,19 @@
+{% extends 'dcwapp/base.html' %}
+{% block title %}Verify Mobile Number   
+{% endblock%}
+{% block body %}
+    
+    {% if otp_error %}
+        {{otp_error}}
+    {% endif %}
+        
+    <form action="" method="POST">
+        OTP
+        <input type="text" name="otp" id="" required>
+        {%csrf_token%}
+        <input type="submit" value="Next">
+        
+    </form>
+    
+    <a href="/dcw/resendotp/">Resend OTP</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'dcwapp/base.html' %}
+
+{% block title %}
+    Mobile Login
+{% endblock title %}
+
+{% block body %}
+    
+    {% if error %}
+        <p>{{error}}</p>
+        
+    {% endif %}
+        
+    <form action="" method="POST">
+        {% csrf_token %}
+        <Label>Mobile Numeber</Label><input type="text" name="mobile" id=""><br><br>
+        <Label>Password</Label><input type="password" name="password" id=""><br><br>
+        <input type="submit" id="" value="Login">
+    </form>
+    Did Not Have account ? <a href="/dcw/signup">Signup</a>
+{% endblock body %}
+    

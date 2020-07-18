@@ -1,0 +1,57 @@
+/*00000000000000000000 for password validation  00000000000000*/
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  padding: 0 40px;
+    margin: 0;
+    width: 58%;
+    position: absolute;
+    top: 38%;
+    left: 31%;
+}
+
+#message p {
+  padding: 1px 35px;
+  font-size: 12px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+.submitbtn{
+font-size: 12px;
+    text-transform: uppercase;
+    padding: 10px 37px;
+    background: #a00606;
+    color: #fff;
+    border-radius: 30px;
+    /* margin-right: 20px; */
+    border: none;
+    margin-top: 30px;
+    margin: 30px auto;
+    justify-content: center;
+    display: flex;
+}

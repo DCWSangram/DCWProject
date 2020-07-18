@@ -1,0 +1,47 @@
+{% extends 'dcwapp/base.html' %}
+{% block title %}Sign Up Page
+{% endblock%}
+
+{% block css %}
+    ul{
+        list-style:none;
+    }
+{% endblock css %}
+    
+{% block body %}
+    <h1>Create Account</h1>
+    
+    {% if error1 %}
+        <p>{{error1}}</p>
+    {% endif %}
+    
+    {% if error2 %}
+        <p>{{error2}}</p>
+        
+    {% endif %}
+                
+    <form action="" method="POST" class="bg-light" onsubmit="return validation()">
+        <!-- {%csrf_token%}
+        <label for="email">Email: </label> <input autocomplete="off" type="text" name="email" id="email"> <br><br>
+        <span id="email1" class="text-danger font-weight-bold"></span> <br><br>
+        <label for="fullname">Full Name: </label> <input autocomplete="off" type="text" name="fullname" id="fullname"> <br><br>
+        <span id="fn" class="text-dange font-weight-bold"></span> <br><br>
+        <label for="">Password: </label> <input autocomplete="off" type="password" name="pwd1" id=""> <br><br>
+        <span id="pwde" class="text-danger font-weight-bold"></span><br><br>
+        <label for="conpass">Confirm Password: </label> <input autocomplete="off" type="password" name="pwd2" id="conpass"> <br><br>
+        <span id="pwdm" class="text-danger font-weight-bold"></span><br><br>
+        <span id="pw2e" class="text-danger font-weight-bold"></span><br><br>
+        <label for="mobile">Mobile Number: </label> <input autocomplete="off" type="text" name="mobile" id="mobile"> <br><br>
+        <label for="">Gender: 
+        </label> <input type="radio" name="gender" id="" value="male" required>Male
+        </label> <input type="radio" name="gender" id="" value="female" required>Female
+        </label> <input type="radio" name="gender" id="" value="transgender" required>Transgender
+        <br><br> -->
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" class="btn btnlg btn-success" value="Next">
+    </form>
+    Already Member ? <a href="/dcw/login">Login</a>
+{% endblock %}
+
+

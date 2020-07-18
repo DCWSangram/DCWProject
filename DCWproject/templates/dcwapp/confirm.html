@@ -1,0 +1,23 @@
+{% extends 'dcwapp/base.html' %}
+
+{% block title %}
+    OTP Verification
+{% endblock title %}
+
+{% block body %}
+
+{% if error %}
+    {{error}}
+{% endif %}
+    
+    <p>A conformation OTP sent to your email {{email}}</p>
+    <form action="/dcw/validatepasswordotp/" method="POST">
+        {%csrf_token%}
+        Enter OTP
+        <br><br>
+        <input type="text" name="passwordotp" maxlength="4" id="">
+        <br><br>
+        <input type="submit" value="Validate OTP">
+    </form>
+{% endblock body %}
+    

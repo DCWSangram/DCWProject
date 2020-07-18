@@ -1,0 +1,25 @@
+{% extends 'dcwapp/base.html' %}    
+
+{% block title %}
+    OTP
+{% endblock title %}
+    
+    {% block body %}
+
+    {% if mobile %}
+        <h1>An OTP has sent to {{mobile}}</h1>
+    {% endif %}
+    
+    {% if invlid_otp %}
+        {{invlid_otp}}
+    {% endif %}
+        
+    <form action="/dcw/validate-otp-mobile/" method="POST">
+        {%csrf_token%}
+        Enter OTP: <input type="text" name="otpmobile" id=""> <br><br>
+        <input type="submit" value="Next">
+    </form>
+    {% endblock body %}
+        
+    
+   

@@ -1,0 +1,37 @@
+{% extends 'dcwapp/base.html' %}
+{% block title %} Address Form {%endblock%}
+{% block body %}
+    <h1>This address Form</h1>
+    
+    <br>
+    <form action="" method="POST" class="form-for-Individual">
+        {% csrf_token %}
+        <label for="address">Select Youe Choice</label>
+        <input type="radio"  name="address" id="address" value="individual" >Individual
+        <input type="radio" name="address" id="address" value="appartment">Appartment
+
+        <br><br>
+        <label for="">Area</label> <input type="text" name="area" id=""> <br><br>
+        <label for="">Lane Number</label> <input type="text" name="lane" id=""> <br><br>
+        <label for="">House Number</label> <input type="text" name="house" id=""> <br><br>
+        <label for="">Address Line 1</label> <input type="text" name="address1" id=""> <br><br>
+        <label for="">Address Line 2</label> <input type="text" name="address2" id=""> <br><br>
+        <label for="">City</label> <input type="text" name="city" id="" value="Bhubaneswar">  <br><br>
+        <label for="">State</label> <input type="text" name="state" id="" value="Odisha"> <br><br>
+        <label for="">PIN</label> <input type="text" name="pin" id=""> <br><br>
+        <input type="submit" value="Save">
+    </form>
+    <br><br>
+    <!-- <form action="" method="POST" class="form-for-Apartment">
+        {%csrf_token%}
+        <label for="">Appartment Name</label> <input type="text" name="apptname" id=""> <br><br>
+        <label for="">Block/Tower number:</label> <input type="text" name="towno" id=""> <br><br>
+        <label for="">House/Flast Number</label> <input type="text" name="fltno" id=""> <br><br>
+        <label for="">Address Line 1</label> <input type="text" name="address1" id=""> <br><br>
+        <label for="">Address Line 2</label> <input type="text" name="address2" id=""> <br><br>
+        <label for="">City</label> <input type="text" name="city" id="" value="Bhubaneswar" disabled>  <br><br>
+        <label for="">State</label> <input type="text" name="state" id="" value="Odisha" disabled> <br><br>
+        <label for="">PIN</label> <input type="text" name="pin" id=""> <br><br>
+        <input type="submit" value="Save">
+    </form> -->
+{%endblock%}

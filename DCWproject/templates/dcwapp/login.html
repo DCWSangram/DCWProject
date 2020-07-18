@@ -1,0 +1,27 @@
+{% extends 'dcwapp/base.html' %}
+{% block title %}Registration page
+{% endblock%}
+{% block body %}
+    <h1 style="color: green;">login Homepage</h1>
+    {% if messages %}
+    {% for message in messages %}
+	   {{message}}
+     {% endfor %}
+    {% endif %}
+
+    {%if error%}
+        <p style="color:red"> {{error}}</p>
+    {% endif %}
+    <form method="POST">
+        {%csrf_token%}
+        <label for="">Username: </label><input required type="text" name="username" placeholder="Username or Mobile Number" id="">
+        <br><br>
+        <label for="">Password: </label><input type="password" required name="password" placeholder="Password" id="">
+    <br><br>
+    <a href="/dcw/reset-password2">Forgot Password ?</a>
+    <br><br>
+        <input type="submit" value="Login">
+    </form>
+    <br><br>
+    Did not have Account ?<a href="/dcw/signup/">Signup</a>
+{% endblock %}

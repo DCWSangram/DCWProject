@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>dailycarwash-signin</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./loginstyle.css">
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+   <section id="formHolder">
+
+      <div class="row">
+
+         <!-- Brand Box -->
+         <div class="col-sm-6 brand">
+            <!--<a href="#" class="logo">Logo</a>-->
+
+            <div class="heading">
+              <img src="../mylogin/logo.png" class="login-page-logo">
+               <p class="login-page-logo_text">Daily Wash At Your DoorStep</p>
+            </div>
+
+            <div class="success-msg">
+               <p>Great! You are one of our members now</p>
+               <a href="#" class="profile">Your Profile</a>
+            </div>
+         </div>
+
+
+         <!-- Form Box -->
+         <div class="col-sm-6 form">
+
+            <!-- Login Form -->
+            <div class="login form-peice switched">
+               <form action="#" onsubmit="return validation()" class="bg-light">
+                      
+                     <div class="field-wrap">
+                        <label>Name<span class="req">*</span></label>
+                          <input type="text" name="user" id="user" autocomplete="off">
+                            <span id="username" class="text-danger font-weight-bold"> </span>
+                      </div>
+                      <div class="field-wrap">
+                        <label>Password<span class="req">*</span></label>
+                          <input type="text" name="pass" id="psw" autocomplete="off">
+                      <span id="passwords" class="text-danger font-weight-bold"> </span>
+                      </div>
+                      <div class="field-wrap">
+                        <label>Confirm Password:<span class="req">*</span></label>
+                          <input type="text" name="conpass" id="conpass" autocomplete="off">
+                          <span id="confrmpass" class="text-danger font-weight-bold"> </span>
+                      </div>
+                      <div class="field-wrap">
+                        <label>Mobile Number<span class="req">*</span></label>
+                          <input type="text" name="mobile" maxlength="10"  id="mobileNumber" autocomplete="off">
+                          <span id="mobileno" class="text-danger font-weight-bold"> </span>
+                      </div>
+                      <div class="field-wrap">
+                        <label>Email<span class="req">*</span></label>
+                          <input type="text" name="email" id="emails" autocomplete="off">
+                           <span id="emailids" class="text-danger font-weight-bold"> </span>
+                      </div>
+
+                    <input type="submit" name="submit" value="submit" class="button submitbtn"   >
+                      
+                      <div class="CTA text-center">
+                     
+                     <a href="#" class="switch">I have an account<span style="margin-left:10px;">>>></span></a>
+                  </div>
+                  </form>
+                   <div id="message">
+  <p class="text-center">Password must contain the following:</p>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+                  
+  
+            </div><!-- End Login Form -->
+
+
+            <!-- Signup Form -->
+            <div class="signup form-peice">
+               <form id="regForm" action="#">
+                      <div class="multiform_tab">
+                        <div class="box">
+                            <div class="field-wrap">
+                              <label>
+                                Name<span class="req">*</span>
+                              </label>
+                              <input type="text" required autocomplete="off" />
+                            </div>
+                            <div class="field-wrap">
+                              <label>
+                                Email<span class="req">*</span>
+                              </label>
+                              <input type="email" required autocomplete="off" />
+                            </div>
+                            <div class="field-wrap">
+                              <label>
+                                password<span class="req">*</span>
+                              </label>
+                               <input type="password"required autocomplete="off"/>
+                            </div>
+                            
+                        </div>
+                  
+                      </div>
+                      <div class="multiform_tab" style="display: none;">
+                        <div class="box">
+                               
+                          <div class="field-wrap">
+                              <label>
+                                Enter Your OTP<span class="req">*</span>
+                              </label>
+                               <input type="number" required autocomplete="off"/>
+                            </div>
+                        </div>
+                        
+                      </div>
+                      <div style="overflow:auto;">
+                        <div style="float:right;">
+                          <button type="button" class="submitbtn" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                          <button type="button" class="submitbtn" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        </div>
+                      </div>
+                <!-- Circles which indicates the steps of the form: -->
+                      <div style="text-align:center;margin-top:40px;display: none;">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                      </div>
+                      <!--<p class="forgot text-center"><a href="#">Forgot Password?</a></p>-->
+                      <div class="CTA text-center">
+                     
+                     <a href="#" class="switch"><span style="margin-right:10px;"><<<</span>I'm New</a>
+                  </div>
+                    </form>
+            </div><!-- End Signup Form -->
+         </div>
+      </div>
+
+   </section>
+
+
+   <!--<footer>
+      <p>
+         Form made by: <a href="http://mohmdhasan.tk" target="_blank">Mohmdhasan.tk</a>
+      </p>
+   </footer>-->
+
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+<script  src="./tab-sign-script.js"></script>
+  <script  src="./pwdval.js"></script>
+  <!-- multiform js -->
+<script>
+    function validation(){
+
+      var user = document.getElementById('user').value;
+      var pass = document.getElementById('psw').value;
+      var confirmpass = document.getElementById('conpass').value;
+      var mobileNumber = document.getElementById('mobileNumber').value;
+      var emails = document.getElementById('emails').value;
+
+
+
+
+
+      if(user == ""){
+        document.getElementById('username').innerHTML =" ** Please fill the username field";
+        return false;
+      }
+      if((user.length <= 2) || (user.length > 20)) {
+        document.getElementById('username').innerHTML =" ** Username lenght must be between 2 and 20";
+        return false; 
+      }
+      if(!isNaN(user)){
+        document.getElementById('username').innerHTML =" ** only characters are allowed";
+        return false;
+      }
+      if(pass == ""){
+        document.getElementById('passwords').innerHTML =" ** Please fill the password field";
+        return false;
+      }
+      if((pass.length <= 5) || (pass.length > 20)) {
+        document.getElementById('passwords').innerHTML =" ** Passwords lenght must be between  5 and 20";
+        return false; 
+      }
+
+
+      if(pass!=confirmpass){
+        document.getElementById('confrmpass').innerHTML =" ** Password does not match the confirm password";
+        return false;
+      }
+
+
+
+      if(confirmpass == ""){
+        document.getElementById('confrmpass').innerHTML =" ** Please fill the confirmpassword field";
+        return false;
+      }
+
+
+
+
+      if(mobileNumber == ""){
+        document.getElementById('mobileno').innerHTML =" ** Please fill the mobile NUmber field";
+        return false;
+      }
+      if(isNaN(mobileNumber)){
+        document.getElementById('mobileno').innerHTML =" ** user must write digits only not characters";
+        return false;
+      }
+      if(mobileNumber.length!=10){
+        document.getElementById('mobileno').innerHTML =" ** Mobile Number must be 10 digits only";
+        return false;
+      }
+
+
+
+      if(emails == ""){
+        document.getElementById('emailids').innerHTML =" ** Please fill the email idx` field";
+        return false;
+      }
+      if(emails.indexOf('@') <= 0 ){
+        document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+        return false;
+      }
+
+      if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+        document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+        return false;
+      }
+    }
+
+</script>
+</body>
+</html>

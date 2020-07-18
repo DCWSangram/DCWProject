@@ -1,0 +1,108 @@
+{% extends 'dcwapp/base.html' %}
+{% block title %}Title of The Profile {%endblock%}
+
+{% block body %}
+    <h1>Profile Page</h1>
+    <a href="/dcw/logout">Logout</a>
+
+    {% if messages %}
+    {% for message in messages %}
+	   {{message}}
+     {% endfor %}
+    {% endif %}
+
+
+
+    <h1>{{data.username}}</h1>
+    <h1>{{data.custuser.full_nname}}</h1>
+    <h1>{{data.custuser.mobile_number}}</h1>
+    
+    {% if data.custuser.cinfo.id %}
+    <h2>Youe Address</h2>
+        
+    {% endif %}
+        
+    
+    {% if data.custuser.cinfo.appt_name %}
+        <p>Appartment Name: {{data.custuser.cinfo.appt_name}}</p>
+    {% endif %}
+    
+    {% if data.custuser.cinfo.lane_number %}
+        <p>Lane Number: {{data.custuser.cinfo.lane_number}}</p>
+    {% endif %}
+    
+    {% if data.custuser.cinfo.block_name %}
+        <p>Block Number: {{data.custuser.cinfo.block_name}}</p>
+    {% endif %}
+    
+    {% if data.custuser.cinfo.House_no %}
+        <p>House Number: {{data.custuser.cinfo.House_no}}</p>
+    {% endif %}
+    
+    {% if data.custuser.cinfo.address_line1 %}
+        <p>Address Line1: {{data.custuser.cinfo.address_line1}}</p>
+    {% endif %}
+    
+    {% if data.custuser.cinfo.address_line2 %}
+        <p>Address Line2: {{data.custuser.cinfo.address_line2}</p>
+    {% endif %}
+    
+    {% if data.custuser.cinfo.city %}
+        <p>City: {{data.custuser.cinfo.city}}</p>
+    {% endif %}
+    
+    {% if data.custuser.cinfo.state %}
+        <p>State: {{data.custuser.cinfo.state}}</p>
+    {% endif %}
+    
+    {% if data.custuser.cinfo.zipcode %}
+        <p>Zip Code: {{data.custuser.cinfo.zipcode}}</p>
+    {% endif %}
+
+
+        
+    
+    {% if data.custuser.cinfo.id %}
+        <a href="/dcw/updateaddress/{{data.id}}">Update Address</a>
+    {% else %}
+        <a href="/dcw/addaddress/{{data.id}}">Add Address</a>
+    {% endif %}
+    
+    {% if vehicle %}
+        <a href="/dcw/addvehicle/{{data.custuser.id}}">Add Another Vehicle</a>
+    {% else %}
+        <a href="/dcw/addvehicle/{{data.custuser.id}}">Add Vehicle</a>
+    {% endif %}
+        
+
+
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    {% if vehicle %}
+    <table border="2">
+        <thead>
+            <th>Vehicle Brand</th>
+            <th>Vehicle Model</th>
+            <th>Vehicle Category</th>
+            <th>Vehicle Number</th>
+            <th>Vehicle Colour</th>
+        </thead>
+        {% for i in vehicle %}
+            <tr>
+                <td>{{i.vehicle_brand}}</td>
+                <td>{{i.vehicle_model}}</td>
+                <td>{{i.vehicle_category}}</td>
+                <td>{{i.vehicle_number}}</td>
+                <td>{{i.vehicle_color}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>You did not start your vehilce service. Please add your vehicle info and enjoy our services</p>
+
+    {% endif %}
+            
+{%endblock%}

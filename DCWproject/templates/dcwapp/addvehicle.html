@@ -1,0 +1,24 @@
+{% extends 'dcwapp/base.html' %}
+{% block title%}
+
+Add Your Vahicle Information
+{% endblock %}
+
+{% block body %}
+    <h1>Add Your vehicle Infomation</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Vehicle Brand: </label><input type="text" name="brand" id="" required> <br><br>
+        <label for="">Vehicle Model: </label><input type="text" name="model" id="" required> <br><br>
+        <label for="">Vehicle Category: </label><input type="text" name="category" id="" required> <br><br>
+        <label for="">Vehicle Number: </label><input type="text" name="number" id="" required> <br><br>
+        <label for="">Fuel type: </label><input type="text" name="fuel" id="" required> <br><br>
+        <label for="">Vehicle Colour: </label><input type="text" name="colour" id=""> <br><br>
+        <label for="">Parking Lot Number: </label><input type="text" name="lot" required id=""> <br><br>
+        <label for="">Parking Area: </label><input type="text" name="area" id="" required> <br><br>
+        <label for="">Preferred Time: </label><input type="time" name="time" required id=""> <br><br>
+
+        <input type="submit" value="save">
+    </form>
+{% endblock %}
+    
